@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.2 (Python 3.9.5 on win32)" generated="20220120 16:45:24.728">
+<suite id="s1" name="BuiltInLibDemo" source="C:\P-workspace\BuiltInLibDemo">
+<suite id="s1-s1" name="Test" source="C:\P-workspace\BuiltInLibDemo\test">
+<suite id="s1-s1-s1" name="ForLoopDemo" source="C:\P-workspace\BuiltInLibDemo\test\ForLoopDemo">
+<suite id="s1-s1-s1-s1" name="Demo02WithSeleniumLib" source="C:\P-workspace\BuiltInLibDemo\test\ForLoopDemo\Demo02WithSeleniumLib.robot">
+<test id="s1-s1-s1-s1-t1" name="TC to demonstrate FOR Loop in Robot Framework">
+<kw name="Set Selenium Implicit Wait" library="Selenium2Library">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20220120 16:45:25.021" endtime="20220120 16:45:25.022"></status>
+</kw>
+<kw name="launchBrowserG" library="rescources">
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>${EXE_PATH}</arg>
+</arguments>
+<assign>
+<var>${pageTitle}</var>
+</assign>
+<kw name="Create Webdriver" library="Selenium2Library">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>${browser}</arg>
+<arg>executable_path=${exe_path}</arg>
+</arguments>
+<msg timestamp="20220120 16:45:25.024" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220120 16:45:25.023" endtime="20220120 16:45:26.819"></status>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20220120 16:45:26.821" level="INFO">Opening url 'https://www.google.com/'</msg>
+<status status="PASS" starttime="20220120 16:45:26.820" endtime="20220120 16:45:27.756"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220120 16:45:27.758" endtime="20220120 16:45:27.901"></status>
+</kw>
+<kw name="Run Keyword And Return" library="BuiltIn">
+<doc>Runs the specified keyword and returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>Get Title</arg>
+</arguments>
+<kw name="Get Title" library="Selenium2Library">
+<doc>Returns the title of current page.</doc>
+<status status="PASS" starttime="20220120 16:45:27.902" endtime="20220120 16:45:27.917"></status>
+</kw>
+<msg timestamp="20220120 16:45:27.917" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20220120 16:45:27.902" endtime="20220120 16:45:27.917"></status>
+</kw>
+<msg timestamp="20220120 16:45:27.918" level="INFO">${pageTitle} = Google</msg>
+<status status="PASS" starttime="20220120 16:45:25.022" endtime="20220120 16:45:27.918"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>'${pageTitle}'</arg>
+<arg>'Google'</arg>
+</arguments>
+<status status="PASS" starttime="20220120 16:45:27.918" endtime="20220120 16:45:27.918"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${pageTitle}</arg>
+</arguments>
+<msg timestamp="20220120 16:45:27.919" level="INFO">Google</msg>
+<status status="PASS" starttime="20220120 16:45:27.918" endtime="20220120 16:45:27.919"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220120 16:45:27.919" endtime="20220120 16:45:27.921"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>name:q</arg>
+<arg>Fresher Academy</arg>
+</arguments>
+<msg timestamp="20220120 16:45:27.922" level="INFO">Typing text 'Fresher Academy' into text field 'name:q'.</msg>
+<status status="PASS" starttime="20220120 16:45:27.922" endtime="20220120 16:45:28.084"></status>
+</kw>
+<kw name="Press Keys" library="Selenium2Library">
+<doc>Simulates user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>xpath:/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input</arg>
+<arg>RETURN</arg>
+</arguments>
+<msg timestamp="20220120 16:45:28.085" level="INFO">Sending key(s) ('RETURN',) to xpath:/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input element.</msg>
+<msg timestamp="20220120 16:45:28.098" level="INFO">Pressing special key RETURN to element.</msg>
+<status status="PASS" starttime="20220120 16:45:28.085" endtime="20220120 16:45:29.850"></status>
+</kw>
+<kw name="Get WebElements" library="Selenium2Library">
+<doc>Returns list of WebElement objects matching the ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="rso"]/div</arg>
+</arguments>
+<assign>
+<var>@{results_on_page}</var>
+</assign>
+<msg timestamp="20220120 16:45:29.867" level="INFO">@{results_on_page} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="68a01309551268154aa198ace8500736", element="b5c6bc5c-08a9-42b1-bec0-443367feb289")&gt; | &lt;selenium.webdriver.remote.webelement.WebElement (ses...</msg>
+<status status="PASS" starttime="20220120 16:45:29.850" endtime="20220120 16:45:29.867"></status>
+</kw>
+<kw name="${element} IN [ @{results_on_page} ]" type="for">
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;68a01309551268154aa198ace8500736&quot;, element=&quot;b5c6bc5c-08a9-42b1-bec0-443367feb289&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20220120 16:45:29.907" level="INFO">${text} = Kết quả trang web kèm đường liên kết của trang web
+
+Fsoft Academy: Trang chủ
+https://fsoft-academy.edu.vn
+FPT Software Academy chính là nơi khởi đầu cho những thành công của các kỹ sư ... Bạn đã và đa...</msg>
+<status status="PASS" starttime="20220120 16:45:29.867" endtime="20220120 16:45:29.907"></status>
+</kw>
+<status status="PASS" starttime="20220120 16:45:29.867" endtime="20220120 16:45:29.907"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;68a01309551268154aa198ace8500736&quot;, element=&quot;546e3a0f-6dd2-41e0-83d6-08d75a4b3c66&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20220120 16:45:29.940" level="INFO">${text} = [Fresher Academy HCM] Trở thành... - FPT Software Academy
+https://vi-vn.facebook.com › posts › fresher-academy-h...
+[Fresher Academy HCM] Trở thành Fresher có gì hay ? Đi học có lương ✔️ đào tạo bài b...</msg>
+<status status="PASS" starttime="20220120 16:45:29.908" endtime="20220120 16:45:29.940"></status>
+</kw>
+<status status="PASS" starttime="20220120 16:45:29.908" endtime="20220120 16:45:29.940"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;68a01309551268154aa198ace8500736&quot;, element=&quot;8c9884d0-de83-4751-8ab7-9651bcd72b2d&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20220120 16:45:30.127" level="INFO">${text} = FPT Software Academy - YouTube
+https://www.youtube.com › channel
+XEM TRƯỚC
+9:36
+Q&amp;A With Cuder #2 | Kinh Nghiệm Giúp Sinh Viên CNTT Tốt Nghiệp ...
+YouTube · FPT Software Academy
+1 tuần trước
+XEM TRƯỚC...</msg>
+<status status="PASS" starttime="20220120 16:45:29.941" endtime="20220120 16:45:30.127"></status>
+</kw>
+<status status="PASS" starttime="20220120 16:45:29.940" endtime="20220120 16:45:30.127"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;68a01309551268154aa198ace8500736&quot;, element=&quot;97d5159a-6691-4b69-835a-544b9ad2fd6b&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20220120 16:45:30.221" level="INFO">${text} = Video
+XEM TRƯỚC
+5:17
+FRESHER ACADEMY - KHÓ KHĂN NÀO KHI ĐÃ QUÁ TUỔI ...
+YouTube · FPT Software Academy
+11 thg 7, 2019
+XEM TRƯỚC
+2:43
+{FPT Software} Fresher Academy Introduction
+YouTube · FPT Software
+...</msg>
+<status status="PASS" starttime="20220120 16:45:30.128" endtime="20220120 16:45:30.221"></status>
+</kw>
+<status status="PASS" starttime="20220120 16:45:30.128" endtime="20220120 16:45:30.222"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;68a01309551268154aa198ace8500736&quot;, element=&quot;7721d61d-a804-4c41-975c-e76ac2ddaecc&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20220120 16:45:30.266" level="INFO">${text} = Học viện Đào tạo Fresher Academy tuyển giảng viên
+http://cse.tlu.edu.vn › Thông báo › Tuyển dụng
+Fresher Academy, là học viện đào tạo Công nghệ thông tin nội bộ thuộc FPT Software. Tự hào là bệ phóng ...</msg>
+<status status="PASS" starttime="20220120 16:45:30.222" endtime="20220120 16:45:30.266"></status>
+</kw>
+<status status="PASS" starttime="20220120 16:45:30.222" endtime="20220120 16:45:30.266"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;68a01309551268154aa198ace8500736&quot;, element=&quot;5cbc8126-c5e8-467d-b854-f6a1b703b3a7&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20220120 16:45:30.292" level="INFO">${text} = Fresher Academy - FPT Software Careers
+https://career.fpt-software.com › news › fresher-academy
+10 thg 4, 2020 — Fresher Academy · Recent Posts · Company · Learn more · Legal · Follow.</msg>
+<status status="PASS" starttime="20220120 16:45:30.267" endtime="20220120 16:45:30.292"></status>
+</kw>
+<status status="PASS" starttime="20220120 16:45:30.267" endtime="20220120 16:45:30.292"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;68a01309551268154aa198ace8500736&quot;, element=&quot;fa5f19d6-8b94-4651-bdb3-2d4c3470fb59&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20220120 16:45:30.311" level="INFO">${text} = Trở thành Kỹ sư công nghệ chuyên nghiệp khi tham gia đào ...
+https://fee.haui.edu.vn › uffile-upload-no-title29709
+PDF
+Chương trình trình đào tạo tại Fresher Academy bao gồm 2 hình thức: Training (Thự...</msg>
+<status status="PASS" starttime="20220120 16:45:30.293" endtime="20220120 16:45:30.311"></status>
+</kw>
+<status status="PASS" starttime="20220120 16:45:30.292" endtime="20220120 16:45:30.312"></status>
+</kw>
+<status status="PASS" starttime="20220120 16:45:29.867" endtime="20220120 16:45:30.312"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220120 16:45:30.312" endtime="20220120 16:45:32.560"></status>
+</kw>
+<doc>TC to demonstrate FOR Loop in Robot Framework</doc>
+<status status="PASS" starttime="20220120 16:45:25.019" endtime="20220120 16:45:32.560" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20220120 16:45:24.806" endtime="20220120 16:45:32.562"></status>
+</suite>
+<status status="PASS" starttime="20220120 16:45:24.803" endtime="20220120 16:45:32.569"></status>
+</suite>
+<status status="PASS" starttime="20220120 16:45:24.801" endtime="20220120 16:45:32.573"></status>
+</suite>
+<status status="PASS" starttime="20220120 16:45:24.783" endtime="20220120 16:45:32.575"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="BuiltInLibDemo">BuiltInLibDemo</stat>
+<stat pass="1" fail="0" id="s1-s1" name="Test">BuiltInLibDemo.Test</stat>
+<stat pass="1" fail="0" id="s1-s1-s1" name="ForLoopDemo">BuiltInLibDemo.Test.ForLoopDemo</stat>
+<stat pass="1" fail="0" id="s1-s1-s1-s1" name="Demo02WithSeleniumLib">BuiltInLibDemo.Test.ForLoopDemo.Demo02WithSeleniumLib</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
