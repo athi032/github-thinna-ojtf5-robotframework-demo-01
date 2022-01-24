@@ -2,6 +2,10 @@
 Library    Selenium2Library
 Resource    ../../resources/rescources.robot
 
+
+Test Setup    myTestSetup   ${BROWSER}    ${EXE_PATH}
+Test Teardown    myTestTeardown
+
 *** Variables ***
 ${URL}=    https://www.saucedemo.com/
 ${BROWSER}=    Chrome
@@ -10,7 +14,7 @@ ${EXE_PATH}=   E:\\FSoft\\Selenium\\chromedriver_win32\\chromedriver.exe
 
 *** Test Cases ***
 LoginTest
-    ${pageTitle}=    launchBrowser    ${URL}    ${BROWSER}    ${EXE_PATH}
+    ${pageTitle}=    Navigate To URL    ${URL}    
     
     Should Be Equal   '${pageTitle}'   'Swag Labs'
     Log    ${pageTitle}     

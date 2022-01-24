@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>BuiltInLibDemo</name>
+	<name>RobotFrameworkDemo</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -24,7 +24,7 @@
 		<link>
 			<name>libspecs/BuiltIn.py</name>
 			<type>1</type>
-			<location>C:/Python39/lib/site-packages/robot/libraries/BuiltIn.py</location>
+			<location>C:/Python39/Lib/site-packages/robot/libraries/BuiltIn.py</location>
 		</link>
 	</linkedResources>
 </projectDescription>

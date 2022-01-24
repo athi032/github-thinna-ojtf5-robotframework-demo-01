@@ -1,46 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.0.2 (Python 3.9.5 on win32)" generated="20220120 16:45:24.728">
-<suite id="s1" name="BuiltInLibDemo" source="C:\P-workspace\BuiltInLibDemo">
-<suite id="s1-s1" name="Test" source="C:\P-workspace\BuiltInLibDemo\test">
-<suite id="s1-s1-s1" name="ForLoopDemo" source="C:\P-workspace\BuiltInLibDemo\test\ForLoopDemo">
-<suite id="s1-s1-s1-s1" name="Demo02WithSeleniumLib" source="C:\P-workspace\BuiltInLibDemo\test\ForLoopDemo\Demo02WithSeleniumLib.robot">
-<test id="s1-s1-s1-s1-t1" name="TC to demonstrate FOR Loop in Robot Framework">
-<kw name="Set Selenium Implicit Wait" library="Selenium2Library">
-<doc>Sets the implicit wait value used by Selenium.</doc>
+<robot generator="Robot 3.0.2 (Python 3.9.5 on win32)" generated="20220124 12:25:14.441">
+<suite id="s1" name="RobotFrameworkDemo" source="C:\P-workspace\RobotFrameworkDemo">
+<suite id="s1-s1" name="Test" source="C:\P-workspace\RobotFrameworkDemo\test">
+<suite id="s1-s1-s1" name="BasicTests" source="C:\P-workspace\RobotFrameworkDemo\test\BasicTests">
+<suite id="s1-s1-s1-s1" name="Demo01" source="C:\P-workspace\RobotFrameworkDemo\test\BasicTests\Demo01.robot">
+<kw name="Log" library="BuiltIn" type="setup">
+<doc>Logs the given message with the given level.</doc>
 <arguments>
-<arg>5s</arg>
+<arg>This is Test Suite Setup</arg>
 </arguments>
-<status status="PASS" starttime="20220120 16:45:25.021" endtime="20220120 16:45:25.022"></status>
+<msg timestamp="20220124 12:25:14.732" level="INFO">This is Test Suite Setup</msg>
+<status status="PASS" starttime="20220124 12:25:14.731" endtime="20220124 12:25:14.732"></status>
 </kw>
-<kw name="launchBrowserG" library="rescources">
+<test id="s1-s1-s1-s1-t1" name="TestUploadfile">
+<kw name="myTestSetup" library="rescources" type="setup">
 <arguments>
-<arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <arg>${EXE_PATH}</arg>
 </arguments>
-<assign>
-<var>${pageTitle}</var>
-</assign>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>This is Test Setup</arg>
+</arguments>
+<msg timestamp="20220124 12:25:14.733" level="INFO">This is Test Setup</msg>
+<status status="PASS" starttime="20220124 12:25:14.733" endtime="20220124 12:25:14.733"></status>
+</kw>
 <kw name="Create Webdriver" library="Selenium2Library">
 <doc>Creates an instance of Selenium WebDriver.</doc>
 <arguments>
 <arg>${browser}</arg>
 <arg>executable_path=${exe_path}</arg>
 </arguments>
-<msg timestamp="20220120 16:45:25.024" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
-<status status="PASS" starttime="20220120 16:45:25.023" endtime="20220120 16:45:26.819"></status>
+<msg timestamp="20220124 12:25:14.734" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220124 12:25:14.733" endtime="20220124 12:25:16.118"></status>
 </kw>
+<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20220124 12:25:16.119" endtime="20220124 12:25:16.120"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220124 12:25:16.121" endtime="20220124 12:25:16.253"></status>
+</kw>
+<status status="PASS" starttime="20220124 12:25:14.733" endtime="20220124 12:25:16.254"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>https://www.w3schools.com/howto/howto_html_file_upload_button.asp</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20220124 12:25:16.255" level="INFO">${url} = https://www.w3schools.com/howto/howto_html_file_upload_button.asp</msg>
+<status status="PASS" starttime="20220124 12:25:16.254" endtime="20220124 12:25:16.255"></status>
+</kw>
+<kw name="Navigate To URL" library="rescources">
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<assign>
+<var>${pageTitle}</var>
+</assign>
 <kw name="Go To" library="Selenium2Library">
 <doc>Navigates the active browser instance to the provided ``url``.</doc>
 <arguments>
 <arg>${url}</arg>
 </arguments>
-<msg timestamp="20220120 16:45:26.821" level="INFO">Opening url 'https://www.google.com/'</msg>
-<status status="PASS" starttime="20220120 16:45:26.820" endtime="20220120 16:45:27.756"></status>
-</kw>
-<kw name="Maximize Browser Window" library="Selenium2Library">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220120 16:45:27.758" endtime="20220120 16:45:27.901"></status>
+<msg timestamp="20220124 12:25:16.257" level="INFO">Opening url 'https://www.w3schools.com/howto/howto_html_file_upload_button.asp'</msg>
+<status status="PASS" starttime="20220124 12:25:16.256" endtime="20220124 12:25:17.596"></status>
 </kw>
 <kw name="Run Keyword And Return" library="BuiltIn">
 <doc>Runs the specified keyword and returns from the enclosing user keyword.</doc>
@@ -49,222 +81,695 @@
 </arguments>
 <kw name="Get Title" library="Selenium2Library">
 <doc>Returns the title of current page.</doc>
-<status status="PASS" starttime="20220120 16:45:27.902" endtime="20220120 16:45:27.917"></status>
+<status status="PASS" starttime="20220124 12:25:17.598" endtime="20220124 12:25:17.605"></status>
 </kw>
-<msg timestamp="20220120 16:45:27.917" level="INFO">Returning from the enclosing user keyword.</msg>
-<status status="PASS" starttime="20220120 16:45:27.902" endtime="20220120 16:45:27.917"></status>
+<msg timestamp="20220124 12:25:17.605" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20220124 12:25:17.597" endtime="20220124 12:25:17.606"></status>
 </kw>
-<msg timestamp="20220120 16:45:27.918" level="INFO">${pageTitle} = Google</msg>
-<status status="PASS" starttime="20220120 16:45:25.022" endtime="20220120 16:45:27.918"></status>
+<msg timestamp="20220124 12:25:17.606" level="INFO">${pageTitle} = How To Create a File Upload Button</msg>
+<status status="PASS" starttime="20220124 12:25:16.255" endtime="20220124 12:25:17.606"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${pageTitle}</arg>
+<arg>File Upload</arg>
+</arguments>
+<status status="PASS" starttime="20220124 12:25:17.607" endtime="20220124 12:25:17.608"></status>
+</kw>
+<kw name="Press Key" library="Selenium2Library">
+<doc>Deprecated use `Press Keys` instead.</doc>
+<arguments>
+<arg>${ID_MY_FILE}</arg>
+<arg>C:\\Users\\OneDrive\\Pictures\\blue ocean waves.jpeg</arg>
+</arguments>
+<status status="PASS" starttime="20220124 12:25:17.608" endtime="20220124 12:25:17.780"></status>
+</kw>
+<kw name="Get Value" library="Selenium2Library">
+<doc>Returns the value attribute of element identified by ``locator``.</doc>
+<arguments>
+<arg>${ID_MY_FILE}</arg>
+</arguments>
+<assign>
+<var>${fileName}</var>
+</assign>
+<msg timestamp="20220124 12:25:17.799" level="INFO">${fileName} = C:\fakepath\blue ocean waves.jpeg</msg>
+<status status="PASS" starttime="20220124 12:25:17.780" endtime="20220124 12:25:17.800"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${fileName}</arg>
+<arg>blue ocean waves.jpeg</arg>
+</arguments>
+<status status="PASS" starttime="20220124 12:25:17.800" endtime="20220124 12:25:17.800"></status>
+</kw>
+<kw name="myTestTeardown" library="rescources" type="teardown">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>This is Test Teardown</arg>
+</arguments>
+<msg timestamp="20220124 12:25:17.802" level="INFO">This is Test Teardown</msg>
+<status status="PASS" starttime="20220124 12:25:17.801" endtime="20220124 12:25:17.802"></status>
+</kw>
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<arguments>
+<arg>Capture Page Screenshot</arg>
+</arguments>
+<status status="PASS" starttime="20220124 12:25:17.802" endtime="20220124 12:25:17.803"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220124 12:25:17.803" endtime="20220124 12:25:20.038"></status>
+</kw>
+<status status="PASS" starttime="20220124 12:25:17.800" endtime="20220124 12:25:20.039"></status>
+</kw>
+<tags>
+<tag>tag02</tag>
+<tag>uploadFile</tag>
+</tags>
+<status status="PASS" starttime="20220124 12:25:14.732" endtime="20220124 12:25:20.040" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-s1-t2" name="Test Iframe">
+<kw name="myTestSetup" library="rescources" type="setup">
+<arguments>
+<arg>${BROWSER}</arg>
+<arg>${EXE_PATH}</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>This is Test Setup</arg>
+</arguments>
+<msg timestamp="20220124 12:25:20.050" level="INFO">This is Test Setup</msg>
+<status status="PASS" starttime="20220124 12:25:20.049" endtime="20220124 12:25:20.050"></status>
+</kw>
+<kw name="Create Webdriver" library="Selenium2Library">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>${browser}</arg>
+<arg>executable_path=${exe_path}</arg>
+</arguments>
+<msg timestamp="20220124 12:25:20.052" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220124 12:25:20.051" endtime="20220124 12:25:21.586"></status>
+</kw>
+<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20220124 12:25:21.586" endtime="20220124 12:25:21.589"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220124 12:25:21.590" endtime="20220124 12:25:21.739"></status>
+</kw>
+<status status="PASS" starttime="20220124 12:25:20.047" endtime="20220124 12:25:21.740"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>https://www.w3schools.com/html/html_iframe.asp</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20220124 12:25:21.741" level="INFO">${url} = https://www.w3schools.com/html/html_iframe.asp</msg>
+<status status="PASS" starttime="20220124 12:25:21.740" endtime="20220124 12:25:21.741"></status>
+</kw>
+<kw name="Navigate To URL" library="rescources">
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<assign>
+<var>${pageTitle}</var>
+</assign>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20220124 12:25:21.749" level="INFO">Opening url 'https://www.w3schools.com/html/html_iframe.asp'</msg>
+<status status="PASS" starttime="20220124 12:25:21.748" endtime="20220124 12:25:23.458"></status>
+</kw>
+<kw name="Run Keyword And Return" library="BuiltIn">
+<doc>Runs the specified keyword and returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>Get Title</arg>
+</arguments>
+<kw name="Get Title" library="Selenium2Library">
+<doc>Returns the title of current page.</doc>
+<status status="PASS" starttime="20220124 12:25:23.461" endtime="20220124 12:25:23.466"></status>
+</kw>
+<msg timestamp="20220124 12:25:23.467" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20220124 12:25:23.459" endtime="20220124 12:25:23.467"></status>
+</kw>
+<msg timestamp="20220124 12:25:23.467" level="INFO">${pageTitle} = HTML Iframes</msg>
+<status status="PASS" starttime="20220124 12:25:21.744" endtime="20220124 12:25:23.467"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${pageTitle}</arg>
+<arg>Iframe</arg>
+</arguments>
+<status status="PASS" starttime="20220124 12:25:23.468" endtime="20220124 12:25:23.468"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>css:#main &gt; h1</arg>
+</arguments>
+<assign>
+<var>${h1Element}</var>
+</assign>
+<msg timestamp="20220124 12:25:23.489" level="INFO">${h1Element} = HTML Iframes</msg>
+<status status="PASS" starttime="20220124 12:25:23.468" endtime="20220124 12:25:23.489"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
 <arguments>
-<arg>'${pageTitle}'</arg>
-<arg>'Google'</arg>
+<arg>${h1Element}</arg>
+<arg>HTML Iframes</arg>
 </arguments>
-<status status="PASS" starttime="20220120 16:45:27.918" endtime="20220120 16:45:27.918"></status>
+<status status="PASS" starttime="20220124 12:25:23.490" endtime="20220124 12:25:23.490"></status>
 </kw>
+<kw name="Select Frame" library="Selenium2Library">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>//*[@id="main"]/div[3]/iframe</arg>
+</arguments>
+<msg timestamp="20220124 12:25:23.490" level="INFO">Selecting frame '//*[@id="main"]/div[3]/iframe'.</msg>
+<status status="PASS" starttime="20220124 12:25:23.490" endtime="20220124 12:25:23.519"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>css:#main &gt; h1</arg>
+</arguments>
+<assign>
+<var>${h1Element}</var>
+</assign>
+<msg timestamp="20220124 12:25:23.535" level="INFO">${h1Element} = HTML Tutorial</msg>
+<status status="PASS" starttime="20220124 12:25:23.519" endtime="20220124 12:25:23.535"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${h1Element}</arg>
+<arg>HTML Tutorial</arg>
+</arguments>
+<status status="PASS" starttime="20220124 12:25:23.536" endtime="20220124 12:25:23.536"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>css:#topnav &gt; div &gt; div &gt; a:nth-child(5)</arg>
+</arguments>
+<msg timestamp="20220124 12:25:23.536" level="INFO">Clicking element 'css:#topnav &gt; div &gt; div &gt; a:nth-child(5)'.</msg>
+<status status="PASS" starttime="20220124 12:25:23.536" endtime="20220124 12:25:24.174"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>css:#main &gt; h1</arg>
+</arguments>
+<assign>
+<var>${h1Element}</var>
+</assign>
+<msg timestamp="20220124 12:25:24.194" level="INFO">${h1Element} = JavaScript Tutorial</msg>
+<status status="PASS" starttime="20220124 12:25:24.175" endtime="20220124 12:25:24.194"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${h1Element}</arg>
+<arg>JavaScript Tutorial</arg>
+</arguments>
+<status status="PASS" starttime="20220124 12:25:24.195" endtime="20220124 12:25:24.195"></status>
+</kw>
+<kw name="Select Window" library="Selenium2Library">
+<doc>Selects browser window matching ``locator``.</doc>
+<arguments>
+<arg>MAIN</arg>
+</arguments>
+<status status="PASS" starttime="20220124 12:25:24.195" endtime="20220124 12:25:24.202"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>css:#main &gt; h1</arg>
+</arguments>
+<assign>
+<var>${h1Element}</var>
+</assign>
+<msg timestamp="20220124 12:25:24.228" level="INFO">${h1Element} = HTML Iframes</msg>
+<status status="PASS" starttime="20220124 12:25:24.203" endtime="20220124 12:25:24.229"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${h1Element}</arg>
+<arg>HTML Iframes</arg>
+</arguments>
+<status status="PASS" starttime="20220124 12:25:24.229" endtime="20220124 12:25:24.230"></status>
+</kw>
+<kw name="myTestTeardown" library="rescources" type="teardown">
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
-<arg>${pageTitle}</arg>
+<arg>This is Test Teardown</arg>
 </arguments>
-<msg timestamp="20220120 16:45:27.919" level="INFO">Google</msg>
-<status status="PASS" starttime="20220120 16:45:27.918" endtime="20220120 16:45:27.919"></status>
+<msg timestamp="20220124 12:25:24.232" level="INFO">This is Test Teardown</msg>
+<status status="PASS" starttime="20220124 12:25:24.231" endtime="20220124 12:25:24.232"></status>
 </kw>
-<kw name="Maximize Browser Window" library="Selenium2Library">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220120 16:45:27.919" endtime="20220120 16:45:27.921"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
 <arguments>
-<arg>name:q</arg>
-<arg>Fresher Academy</arg>
+<arg>Capture Page Screenshot</arg>
 </arguments>
-<msg timestamp="20220120 16:45:27.922" level="INFO">Typing text 'Fresher Academy' into text field 'name:q'.</msg>
-<status status="PASS" starttime="20220120 16:45:27.922" endtime="20220120 16:45:28.084"></status>
-</kw>
-<kw name="Press Keys" library="Selenium2Library">
-<doc>Simulates user pressing key(s) to an element or on the active browser.</doc>
-<arguments>
-<arg>xpath:/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input</arg>
-<arg>RETURN</arg>
-</arguments>
-<msg timestamp="20220120 16:45:28.085" level="INFO">Sending key(s) ('RETURN',) to xpath:/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input element.</msg>
-<msg timestamp="20220120 16:45:28.098" level="INFO">Pressing special key RETURN to element.</msg>
-<status status="PASS" starttime="20220120 16:45:28.085" endtime="20220120 16:45:29.850"></status>
-</kw>
-<kw name="Get WebElements" library="Selenium2Library">
-<doc>Returns list of WebElement objects matching the ``locator``.</doc>
-<arguments>
-<arg>xpath://*[@id="rso"]/div</arg>
-</arguments>
-<assign>
-<var>@{results_on_page}</var>
-</assign>
-<msg timestamp="20220120 16:45:29.867" level="INFO">@{results_on_page} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="68a01309551268154aa198ace8500736", element="b5c6bc5c-08a9-42b1-bec0-443367feb289")&gt; | &lt;selenium.webdriver.remote.webelement.WebElement (ses...</msg>
-<status status="PASS" starttime="20220120 16:45:29.850" endtime="20220120 16:45:29.867"></status>
-</kw>
-<kw name="${element} IN [ @{results_on_page} ]" type="for">
-<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;68a01309551268154aa198ace8500736&quot;, element=&quot;b5c6bc5c-08a9-42b1-bec0-443367feb289&quot;)&gt;" type="foritem">
-<kw name="Get Text" library="Selenium2Library">
-<doc>Returns the text value of element identified by ``locator``.</doc>
-<arguments>
-<arg>${element}</arg>
-</arguments>
-<assign>
-<var>${text}</var>
-</assign>
-<msg timestamp="20220120 16:45:29.907" level="INFO">${text} = Kết quả trang web kèm đường liên kết của trang web
-
-Fsoft Academy: Trang chủ
-https://fsoft-academy.edu.vn
-FPT Software Academy chính là nơi khởi đầu cho những thành công của các kỹ sư ... Bạn đã và đa...</msg>
-<status status="PASS" starttime="20220120 16:45:29.867" endtime="20220120 16:45:29.907"></status>
-</kw>
-<status status="PASS" starttime="20220120 16:45:29.867" endtime="20220120 16:45:29.907"></status>
-</kw>
-<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;68a01309551268154aa198ace8500736&quot;, element=&quot;546e3a0f-6dd2-41e0-83d6-08d75a4b3c66&quot;)&gt;" type="foritem">
-<kw name="Get Text" library="Selenium2Library">
-<doc>Returns the text value of element identified by ``locator``.</doc>
-<arguments>
-<arg>${element}</arg>
-</arguments>
-<assign>
-<var>${text}</var>
-</assign>
-<msg timestamp="20220120 16:45:29.940" level="INFO">${text} = [Fresher Academy HCM] Trở thành... - FPT Software Academy
-https://vi-vn.facebook.com › posts › fresher-academy-h...
-[Fresher Academy HCM] Trở thành Fresher có gì hay ? Đi học có lương ✔️ đào tạo bài b...</msg>
-<status status="PASS" starttime="20220120 16:45:29.908" endtime="20220120 16:45:29.940"></status>
-</kw>
-<status status="PASS" starttime="20220120 16:45:29.908" endtime="20220120 16:45:29.940"></status>
-</kw>
-<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;68a01309551268154aa198ace8500736&quot;, element=&quot;8c9884d0-de83-4751-8ab7-9651bcd72b2d&quot;)&gt;" type="foritem">
-<kw name="Get Text" library="Selenium2Library">
-<doc>Returns the text value of element identified by ``locator``.</doc>
-<arguments>
-<arg>${element}</arg>
-</arguments>
-<assign>
-<var>${text}</var>
-</assign>
-<msg timestamp="20220120 16:45:30.127" level="INFO">${text} = FPT Software Academy - YouTube
-https://www.youtube.com › channel
-XEM TRƯỚC
-9:36
-Q&amp;A With Cuder #2 | Kinh Nghiệm Giúp Sinh Viên CNTT Tốt Nghiệp ...
-YouTube · FPT Software Academy
-1 tuần trước
-XEM TRƯỚC...</msg>
-<status status="PASS" starttime="20220120 16:45:29.941" endtime="20220120 16:45:30.127"></status>
-</kw>
-<status status="PASS" starttime="20220120 16:45:29.940" endtime="20220120 16:45:30.127"></status>
-</kw>
-<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;68a01309551268154aa198ace8500736&quot;, element=&quot;97d5159a-6691-4b69-835a-544b9ad2fd6b&quot;)&gt;" type="foritem">
-<kw name="Get Text" library="Selenium2Library">
-<doc>Returns the text value of element identified by ``locator``.</doc>
-<arguments>
-<arg>${element}</arg>
-</arguments>
-<assign>
-<var>${text}</var>
-</assign>
-<msg timestamp="20220120 16:45:30.221" level="INFO">${text} = Video
-XEM TRƯỚC
-5:17
-FRESHER ACADEMY - KHÓ KHĂN NÀO KHI ĐÃ QUÁ TUỔI ...
-YouTube · FPT Software Academy
-11 thg 7, 2019
-XEM TRƯỚC
-2:43
-{FPT Software} Fresher Academy Introduction
-YouTube · FPT Software
-...</msg>
-<status status="PASS" starttime="20220120 16:45:30.128" endtime="20220120 16:45:30.221"></status>
-</kw>
-<status status="PASS" starttime="20220120 16:45:30.128" endtime="20220120 16:45:30.222"></status>
-</kw>
-<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;68a01309551268154aa198ace8500736&quot;, element=&quot;7721d61d-a804-4c41-975c-e76ac2ddaecc&quot;)&gt;" type="foritem">
-<kw name="Get Text" library="Selenium2Library">
-<doc>Returns the text value of element identified by ``locator``.</doc>
-<arguments>
-<arg>${element}</arg>
-</arguments>
-<assign>
-<var>${text}</var>
-</assign>
-<msg timestamp="20220120 16:45:30.266" level="INFO">${text} = Học viện Đào tạo Fresher Academy tuyển giảng viên
-http://cse.tlu.edu.vn › Thông báo › Tuyển dụng
-Fresher Academy, là học viện đào tạo Công nghệ thông tin nội bộ thuộc FPT Software. Tự hào là bệ phóng ...</msg>
-<status status="PASS" starttime="20220120 16:45:30.222" endtime="20220120 16:45:30.266"></status>
-</kw>
-<status status="PASS" starttime="20220120 16:45:30.222" endtime="20220120 16:45:30.266"></status>
-</kw>
-<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;68a01309551268154aa198ace8500736&quot;, element=&quot;5cbc8126-c5e8-467d-b854-f6a1b703b3a7&quot;)&gt;" type="foritem">
-<kw name="Get Text" library="Selenium2Library">
-<doc>Returns the text value of element identified by ``locator``.</doc>
-<arguments>
-<arg>${element}</arg>
-</arguments>
-<assign>
-<var>${text}</var>
-</assign>
-<msg timestamp="20220120 16:45:30.292" level="INFO">${text} = Fresher Academy - FPT Software Careers
-https://career.fpt-software.com › news › fresher-academy
-10 thg 4, 2020 — Fresher Academy · Recent Posts · Company · Learn more · Legal · Follow.</msg>
-<status status="PASS" starttime="20220120 16:45:30.267" endtime="20220120 16:45:30.292"></status>
-</kw>
-<status status="PASS" starttime="20220120 16:45:30.267" endtime="20220120 16:45:30.292"></status>
-</kw>
-<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;68a01309551268154aa198ace8500736&quot;, element=&quot;fa5f19d6-8b94-4651-bdb3-2d4c3470fb59&quot;)&gt;" type="foritem">
-<kw name="Get Text" library="Selenium2Library">
-<doc>Returns the text value of element identified by ``locator``.</doc>
-<arguments>
-<arg>${element}</arg>
-</arguments>
-<assign>
-<var>${text}</var>
-</assign>
-<msg timestamp="20220120 16:45:30.311" level="INFO">${text} = Trở thành Kỹ sư công nghệ chuyên nghiệp khi tham gia đào ...
-https://fee.haui.edu.vn › uffile-upload-no-title29709
-PDF
-Chương trình trình đào tạo tại Fresher Academy bao gồm 2 hình thức: Training (Thự...</msg>
-<status status="PASS" starttime="20220120 16:45:30.293" endtime="20220120 16:45:30.311"></status>
-</kw>
-<status status="PASS" starttime="20220120 16:45:30.292" endtime="20220120 16:45:30.312"></status>
-</kw>
-<status status="PASS" starttime="20220120 16:45:29.867" endtime="20220120 16:45:30.312"></status>
+<status status="PASS" starttime="20220124 12:25:24.233" endtime="20220124 12:25:24.233"></status>
 </kw>
 <kw name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220120 16:45:30.312" endtime="20220120 16:45:32.560"></status>
+<status status="PASS" starttime="20220124 12:25:24.233" endtime="20220124 12:25:26.506"></status>
 </kw>
-<doc>TC to demonstrate FOR Loop in Robot Framework</doc>
-<status status="PASS" starttime="20220120 16:45:25.019" endtime="20220120 16:45:32.560" critical="yes"></status>
+<status status="PASS" starttime="20220124 12:25:24.230" endtime="20220124 12:25:26.506"></status>
+</kw>
+<tags>
+<tag>tag01</tag>
+<tag>tag02</tag>
+</tags>
+<status status="PASS" starttime="20220124 12:25:20.044" endtime="20220124 12:25:26.506" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20220120 16:45:24.806" endtime="20220120 16:45:32.562"></status>
+<test id="s1-s1-s1-s1-t3" name="Test New Tab">
+<kw name="myTestSetup" library="rescources" type="setup">
+<arguments>
+<arg>${BROWSER}</arg>
+<arg>${EXE_PATH}</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>This is Test Setup</arg>
+</arguments>
+<msg timestamp="20220124 12:25:26.509" level="INFO">This is Test Setup</msg>
+<status status="PASS" starttime="20220124 12:25:26.509" endtime="20220124 12:25:26.509"></status>
+</kw>
+<kw name="Create Webdriver" library="Selenium2Library">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>${browser}</arg>
+<arg>executable_path=${exe_path}</arg>
+</arguments>
+<msg timestamp="20220124 12:25:26.510" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220124 12:25:26.510" endtime="20220124 12:25:28.701"></status>
+</kw>
+<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20220124 12:25:28.702" endtime="20220124 12:25:28.704"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220124 12:25:28.704" endtime="20220124 12:25:28.838"></status>
+</kw>
+<status status="PASS" starttime="20220124 12:25:26.508" endtime="20220124 12:25:28.838"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>http://www.google.com/</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20220124 12:25:28.840" level="INFO">${url} = http://www.google.com/</msg>
+<status status="PASS" starttime="20220124 12:25:28.839" endtime="20220124 12:25:28.840"></status>
+</kw>
+<kw name="Navigate To URL" library="rescources">
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<assign>
+<var>${pageTitle}</var>
+</assign>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20220124 12:25:28.846" level="INFO">Opening url 'http://www.google.com/'</msg>
+<status status="PASS" starttime="20220124 12:25:28.842" endtime="20220124 12:25:30.109"></status>
+</kw>
+<kw name="Run Keyword And Return" library="BuiltIn">
+<doc>Runs the specified keyword and returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>Get Title</arg>
+</arguments>
+<kw name="Get Title" library="Selenium2Library">
+<doc>Returns the title of current page.</doc>
+<status status="PASS" starttime="20220124 12:25:30.110" endtime="20220124 12:25:30.116"></status>
+</kw>
+<msg timestamp="20220124 12:25:30.116" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20220124 12:25:30.109" endtime="20220124 12:25:30.116"></status>
+</kw>
+<msg timestamp="20220124 12:25:30.117" level="INFO">${pageTitle} = Google</msg>
+<status status="PASS" starttime="20220124 12:25:28.841" endtime="20220124 12:25:30.117"></status>
+</kw>
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals ``title``.</doc>
+<arguments>
+<arg>${pageTitle}</arg>
+</arguments>
+<msg timestamp="20220124 12:25:30.121" level="INFO">Page title is 'Google'.</msg>
+<status status="PASS" starttime="20220124 12:25:30.117" endtime="20220124 12:25:30.121"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>window.open('')</arg>
+</arguments>
+<msg timestamp="20220124 12:25:30.124" level="INFO">Executing JavaScript:
+window.open('')
+Without any arguments.</msg>
+<status status="PASS" starttime="20220124 12:25:30.122" endtime="20220124 12:25:30.169"></status>
+</kw>
+<kw name="Get Window Titles" library="Selenium2Library">
+<doc>Returns and logs titles of all known browser windows.</doc>
+<msg timestamp="20220124 12:25:30.369" level="INFO">Altogether 2 items.
+1: Google
+2: undefined</msg>
+<status status="PASS" starttime="20220124 12:25:30.170" endtime="20220124 12:25:30.369"></status>
+</kw>
+<kw name="Select Window" library="Selenium2Library">
+<doc>Selects browser window matching ``locator``.</doc>
+<arguments>
+<arg>title=undefined</arg>
+</arguments>
+<status status="PASS" starttime="20220124 12:25:30.369" endtime="20220124 12:25:30.445"></status>
+</kw>
+<kw name="Navigate To URL" library="rescources">
+<arguments>
+<arg>http://www.youtube.com/</arg>
+</arguments>
+<assign>
+<var>${pageTitle}</var>
+</assign>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20220124 12:25:30.446" level="INFO">Opening url 'http://www.youtube.com/'</msg>
+<status status="PASS" starttime="20220124 12:25:30.446" endtime="20220124 12:25:33.552"></status>
+</kw>
+<kw name="Run Keyword And Return" library="BuiltIn">
+<doc>Runs the specified keyword and returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>Get Title</arg>
+</arguments>
+<kw name="Get Title" library="Selenium2Library">
+<doc>Returns the title of current page.</doc>
+<status status="PASS" starttime="20220124 12:25:33.553" endtime="20220124 12:25:33.558"></status>
+</kw>
+<msg timestamp="20220124 12:25:33.558" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20220124 12:25:33.552" endtime="20220124 12:25:33.558"></status>
+</kw>
+<msg timestamp="20220124 12:25:33.559" level="INFO">${pageTitle} = YouTube</msg>
+<status status="PASS" starttime="20220124 12:25:30.445" endtime="20220124 12:25:33.559"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${pageTitle}</arg>
+<arg>YouTube</arg>
+</arguments>
+<status status="PASS" starttime="20220124 12:25:33.560" endtime="20220124 12:25:33.560"></status>
+</kw>
+<kw name="Select Window" library="Selenium2Library">
+<doc>Selects browser window matching ``locator``.</doc>
+<arguments>
+<arg>MAIN</arg>
+</arguments>
+<status status="PASS" starttime="20220124 12:25:33.561" endtime="20220124 12:25:33.583"></status>
+</kw>
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals ``title``.</doc>
+<arguments>
+<arg>Google</arg>
+</arguments>
+<msg timestamp="20220124 12:25:33.590" level="INFO">Page title is 'Google'.</msg>
+<status status="PASS" starttime="20220124 12:25:33.583" endtime="20220124 12:25:33.591"></status>
+</kw>
+<kw name="myTestTeardown" library="rescources" type="teardown">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>This is Test Teardown</arg>
+</arguments>
+<msg timestamp="20220124 12:25:33.593" level="INFO">This is Test Teardown</msg>
+<status status="PASS" starttime="20220124 12:25:33.593" endtime="20220124 12:25:33.593"></status>
+</kw>
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<arguments>
+<arg>Capture Page Screenshot</arg>
+</arguments>
+<status status="PASS" starttime="20220124 12:25:33.593" endtime="20220124 12:25:33.593"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220124 12:25:33.594" endtime="20220124 12:25:35.849"></status>
+</kw>
+<status status="PASS" starttime="20220124 12:25:33.592" endtime="20220124 12:25:35.850"></status>
+</kw>
+<tags>
+<tag>tag01</tag>
+<tag>tag02</tag>
+</tags>
+<status status="PASS" starttime="20220124 12:25:26.508" endtime="20220124 12:25:35.850" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-s1-t4" name="Test Popout Windows">
+<kw name="myTestSetup" library="rescources" type="setup">
+<arguments>
+<arg>${BROWSER}</arg>
+<arg>${EXE_PATH}</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>This is Test Setup</arg>
+</arguments>
+<msg timestamp="20220124 12:25:35.852" level="INFO">This is Test Setup</msg>
+<status status="PASS" starttime="20220124 12:25:35.852" endtime="20220124 12:25:35.852"></status>
+</kw>
+<kw name="Create Webdriver" library="Selenium2Library">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>${browser}</arg>
+<arg>executable_path=${exe_path}</arg>
+</arguments>
+<msg timestamp="20220124 12:25:35.853" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220124 12:25:35.853" endtime="20220124 12:25:38.019"></status>
+</kw>
+<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20220124 12:25:38.019" endtime="20220124 12:25:38.021"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220124 12:25:38.022" endtime="20220124 12:25:38.149"></status>
+</kw>
+<status status="PASS" starttime="20220124 12:25:35.851" endtime="20220124 12:25:38.149"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>https://www.encodedna.com/javascript/demo/open-new-window-using-javascript-method.htm</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20220124 12:25:38.150" level="INFO">${url} = https://www.encodedna.com/javascript/demo/open-new-window-using-javascript-method.htm</msg>
+<status status="PASS" starttime="20220124 12:25:38.149" endtime="20220124 12:25:38.150"></status>
+</kw>
+<kw name="Navigate To URL" library="rescources">
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<assign>
+<var>${pageTitle}</var>
+</assign>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20220124 12:25:38.151" level="INFO">Opening url 'https://www.encodedna.com/javascript/demo/open-new-window-using-javascript-method.htm'</msg>
+<status status="PASS" starttime="20220124 12:25:38.151" endtime="20220124 12:25:41.607"></status>
+</kw>
+<kw name="Run Keyword And Return" library="BuiltIn">
+<doc>Runs the specified keyword and returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>Get Title</arg>
+</arguments>
+<kw name="Get Title" library="Selenium2Library">
+<doc>Returns the title of current page.</doc>
+<status status="PASS" starttime="20220124 12:25:41.610" endtime="20220124 12:25:41.617"></status>
+</kw>
+<msg timestamp="20220124 12:25:41.617" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20220124 12:25:41.609" endtime="20220124 12:25:41.617"></status>
+</kw>
+<msg timestamp="20220124 12:25:41.618" level="INFO">${pageTitle} = Open a New Browser Window using JavaScript - Demo</msg>
+<status status="PASS" starttime="20220124 12:25:38.150" endtime="20220124 12:25:41.618"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${pageTitle}</arg>
+<arg>Open a New Browser Window</arg>
+</arguments>
+<status status="PASS" starttime="20220124 12:25:41.619" endtime="20220124 12:25:41.619"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>window.scrollTo(0, 500)</arg>
+</arguments>
+<msg timestamp="20220124 12:25:41.621" level="INFO">Executing JavaScript:
+window.scrollTo(0, 500)
+Without any arguments.</msg>
+<status status="PASS" starttime="20220124 12:25:41.620" endtime="20220124 12:25:41.632"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>//*[@id="content"]/div[3]/p[2]/input[1]</arg>
+</arguments>
+<msg timestamp="20220124 12:25:41.633" level="INFO">Clicking element '//*[@id="content"]/div[3]/p[2]/input[1]'.</msg>
+<status status="PASS" starttime="20220124 12:25:41.632" endtime="20220124 12:25:41.856"></status>
+</kw>
+<kw name="Get Window Handles" library="Selenium2Library">
+<doc>Return all current window handles as a list.</doc>
+<assign>
+<var>@{windowHandle}</var>
+</assign>
+<msg timestamp="20220124 12:25:41.900" level="INFO">@{windowHandle} = [ CDwindow-8216BD8E050C85322D957CA8660D1083 | CDwindow-4D15CDF3E332561B01BF983C2299325E ]</msg>
+<status status="PASS" starttime="20220124 12:25:41.859" endtime="20220124 12:25:41.900"></status>
+</kw>
+<kw name="Select Window" library="Selenium2Library">
+<doc>Selects browser window matching ``locator``.</doc>
+<arguments>
+<arg>@{windowHandle}[1]</arg>
+</arguments>
+<status status="PASS" starttime="20220124 12:25:41.901" endtime="20220124 12:25:42.465"></status>
+</kw>
+<kw name="Get Title" library="Selenium2Library">
+<doc>Returns the title of current page.</doc>
+<assign>
+<var>${page2Title}</var>
+</assign>
+<msg timestamp="20220124 12:25:43.213" level="INFO">${page2Title} = Open a New Window using JavaScript window.open() - Demo</msg>
+<status status="PASS" starttime="20220124 12:25:42.468" endtime="20220124 12:25:43.214"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${page2Title}</arg>
+<arg>Open a New Window using JavaScript</arg>
+</arguments>
+<status status="PASS" starttime="20220124 12:25:43.214" endtime="20220124 12:25:43.215"></status>
+</kw>
+<kw name="Select Window" library="Selenium2Library">
+<doc>Selects browser window matching ``locator``.</doc>
+<arguments>
+<arg>@{windowHandle}[0]</arg>
+</arguments>
+<status status="PASS" starttime="20220124 12:25:43.215" endtime="20220124 12:25:43.246"></status>
+</kw>
+<kw name="Get Title" library="Selenium2Library">
+<doc>Returns the title of current page.</doc>
+<assign>
+<var>${pageTitle}</var>
+</assign>
+<msg timestamp="20220124 12:25:43.261" level="INFO">${pageTitle} = Open a New Browser Window using JavaScript - Demo</msg>
+<status status="PASS" starttime="20220124 12:25:43.247" endtime="20220124 12:25:43.262"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${pageTitle}</arg>
+<arg>Open a New Browser Window</arg>
+</arguments>
+<status status="PASS" starttime="20220124 12:25:43.262" endtime="20220124 12:25:43.262"></status>
+</kw>
+<kw name="myTestTeardown" library="rescources" type="teardown">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>This is Test Teardown</arg>
+</arguments>
+<msg timestamp="20220124 12:25:43.264" level="INFO">This is Test Teardown</msg>
+<status status="PASS" starttime="20220124 12:25:43.263" endtime="20220124 12:25:43.264"></status>
+</kw>
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<arguments>
+<arg>Capture Page Screenshot</arg>
+</arguments>
+<status status="PASS" starttime="20220124 12:25:43.264" endtime="20220124 12:25:43.265"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220124 12:25:43.265" endtime="20220124 12:25:45.639"></status>
+</kw>
+<status status="PASS" starttime="20220124 12:25:43.263" endtime="20220124 12:25:45.640"></status>
+</kw>
+<tags>
+<tag>tag01</tag>
+<tag>tag02</tag>
+</tags>
+<status status="PASS" starttime="20220124 12:25:35.851" endtime="20220124 12:25:45.640" critical="yes"></status>
+</test>
+<kw name="Log" library="BuiltIn" type="teardown">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>This is Test Suite Teardown</arg>
+</arguments>
+<msg timestamp="20220124 12:25:45.643" level="INFO">This is Test Suite Teardown</msg>
+<status status="PASS" starttime="20220124 12:25:45.642" endtime="20220124 12:25:45.644"></status>
+</kw>
+<status status="PASS" starttime="20220124 12:25:14.528" endtime="20220124 12:25:45.644"></status>
 </suite>
-<status status="PASS" starttime="20220120 16:45:24.803" endtime="20220120 16:45:32.569"></status>
+<status status="PASS" starttime="20220124 12:25:14.525" endtime="20220124 12:25:45.649"></status>
 </suite>
-<status status="PASS" starttime="20220120 16:45:24.801" endtime="20220120 16:45:32.573"></status>
+<status status="PASS" starttime="20220124 12:25:14.522" endtime="20220124 12:25:45.652"></status>
 </suite>
-<status status="PASS" starttime="20220120 16:45:24.783" endtime="20220120 16:45:32.575"></status>
+<status status="PASS" starttime="20220124 12:25:14.496" endtime="20220124 12:25:45.657"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0">Critical Tests</stat>
-<stat pass="1" fail="0">All Tests</stat>
+<stat pass="4" fail="0">Critical Tests</stat>
+<stat pass="4" fail="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="3" fail="0">tag01</stat>
+<stat pass="4" fail="0">tag02</stat>
+<stat pass="1" fail="0">uploadFile</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" id="s1" name="BuiltInLibDemo">BuiltInLibDemo</stat>
-<stat pass="1" fail="0" id="s1-s1" name="Test">BuiltInLibDemo.Test</stat>
-<stat pass="1" fail="0" id="s1-s1-s1" name="ForLoopDemo">BuiltInLibDemo.Test.ForLoopDemo</stat>
-<stat pass="1" fail="0" id="s1-s1-s1-s1" name="Demo02WithSeleniumLib">BuiltInLibDemo.Test.ForLoopDemo.Demo02WithSeleniumLib</stat>
+<stat pass="4" fail="0" id="s1" name="RobotFrameworkDemo">RobotFrameworkDemo</stat>
+<stat pass="4" fail="0" id="s1-s1" name="Test">RobotFrameworkDemo.Test</stat>
+<stat pass="4" fail="0" id="s1-s1-s1" name="BasicTests">RobotFrameworkDemo.Test.BasicTests</stat>
+<stat pass="4" fail="0" id="s1-s1-s1-s1" name="Demo01">RobotFrameworkDemo.Test.BasicTests.Demo01</stat>
 </suite>
 </statistics>
 <errors>
